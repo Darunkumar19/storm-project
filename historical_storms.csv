@@ -1,0 +1,101 @@
+id,name,start_date,end_date,basin,lat,lon,max_wind_kmh,min_pressure_mb,total_rainfall_mm,tide_level_m,surge_occurred,surge_height_m,affected_states
+1,Asha,03-07-2008,08-07-2008,Bay of Bengal,16.684,81.012,163,894,840,1.16,TRUE,3.75,West Bengal;Karnataka
+2,Bhairavi,04-02-1983,05-02-1983,Bay of Bengal,10.332,83.982,91,961,362,1.17,TRUE,0.82,Kerala
+3,Chetan,14-12-1991,18-12-1991,Bay of Bengal,12.791,88.705,124,910,673,0.51,TRUE,1.64,Andhra Pradesh
+4,Danish-800,05-01-2001,07-01-2001,Arabian Sea,18.265,69.575,101,955,535,0.73,TRUE,0.62,Gujarat
+5,Esha,05-08-1991,09-08-1991,Bay of Bengal,15.489,84.322,149,889,812,1.68,TRUE,4.34,Odisha;Tamil Nadu
+6,Fani,24-11-1994,26-11-1994,Bay of Bengal,6.742,86.51,73,979,363,0.86,FALSE,0,Andaman and Nicobar
+7,Gaja,18-10-1986,19-10-1986,Bay of Bengal,9.297,89.824,78,979,431,1.53,FALSE,0,West Bengal
+8,Hikaa,12-12-2003,18-12-2003,Arabian Sea,20.395,71.833,119,921,599,2.1,TRUE,2.81,Gujarat;Maharashtra
+9,Jal,01-11-2010,04-11-2010,Bay of Bengal,14.902,83.441,132,930,710,1.72,TRUE,3.12,Odisha;West Bengal
+10,Khanun,17-05-2005,20-05-2005,Arabian Sea,17.214,68.907,95,960,420,0.94,FALSE,0,Gujarat
+11,Lehar,23-11-2013,27-11-2013,Bay of Bengal,13.11,86.221,118,942,590,1.31,TRUE,2.22,Andhra Pradesh
+12,Mekunu,21-05-2018,25-05-2018,Arabian Sea,19.443,70.118,155,915,820,1.88,TRUE,4.05,Maharashtra;Gujarat
+13,Nisarga,02-06-2020,04-06-2020,Arabian Sea,18.944,72.221,120,948,500,1.1,TRUE,1.95,Maharashtra
+14,Tauktae,14-05-2021,18-05-2021,Arabian Sea,21.101,71.441,185,905,900,2.15,TRUE,5.4,Gujarat;Goa;Karnataka
+15,Yaas,23-05-2021,27-05-2021,Bay of Bengal,15.903,88.301,150,928,780,1.67,TRUE,3.7,Odisha;West Bengal
+16,Gulab,24-09-2021,27-09-2021,Bay of Bengal,17.004,85.221,95,965,410,0.98,FALSE,0,Andhra Pradesh
+17,Amphan,16-05-2020,21-05-2020,Bay of Bengal,16.889,88.102,240,905,950,1.92,TRUE,5.1,West Bengal;Odisha
+18,Bulbul,06-11-2019,09-11-2019,Bay of Bengal,18.332,89.021,135,940,600,1.45,TRUE,2.45,West Bengal
+19,Hudhud,08-10-2014,12-10-2014,Bay of Bengal,14.882,84.55,175,910,850,1.7,TRUE,4.2,Andhra Pradesh;Odisha
+20,Varsha,03-09-1998,07-09-1998,Arabian Sea,16.552,69.982,82,972,390,0.76,FALSE,0,Gujarat
+21,Biparjoy,10-06-2023,16-06-2023,Arabian Sea,19.445,70.882,170,910,880,2.05,TRUE,4.6,Gujarat;Maharashtra
+22,Sitrang,21-10-2022,25-10-2022,Bay of Bengal,18.991,89.114,110,952,520,1.22,TRUE,2.05,West Bengal;Assam
+23,Mocha,08-05-2023,14-05-2023,Bay of Bengal,15.112,91.21,195,905,920,1.85,TRUE,5.3,Andaman and Nicobar;West Bengal
+24,Mora,26-05-2017,31-05-2017,Bay of Bengal,16.701,88.552,125,940,610,1.4,TRUE,2.7,Odisha;West Bengal
+25,Laila,17-05-2010,21-05-2010,Bay of Bengal,14.223,85.771,105,960,480,1.05,FALSE,0,Andhra Pradesh
+26,Nilam,28-10-2012,01-11-2012,Bay of Bengal,12.991,84.221,95,968,420,0.95,FALSE,0,Tamil Nadu;Puducherry
+27,Ockhi,29-11-2017,05-12-2017,Arabian Sea,10.445,72.001,160,915,870,1.6,TRUE,3.9,Kerala;Tamil Nadu
+28,Vardah,12-12-2016,16-12-2016,Bay of Bengal,13.332,83.114,140,930,720,1.5,TRUE,2.95,Tamil Nadu;Andhra Pradesh
+29,Nargis,27-04-2008,03-05-2008,Bay of Bengal,14.201,89.901,200,900,940,2.1,TRUE,5.8,Andaman and Nicobar
+30,Bhola,18-10-1988,23-10-1988,Bay of Bengal,16.772,90.332,180,910,860,1.9,TRUE,4.4,West Bengal
+31,Gonu,01-06-2007,07-06-2007,Arabian Sea,18.113,69.772,150,925,760,1.7,TRUE,3.5,Gujarat;Maharashtra
+32,Faro,04-08-1995,09-08-1995,Bay of Bengal,15.445,86.552,120,945,620,1.3,TRUE,2.3,Odisha
+33,Imelda,12-09-2001,16-09-2001,Bay of Bengal,17.882,88.441,100,960,500,1,FALSE,0,West Bengal
+34,Asha-211,18-07-1993,21-07-1993,Bay of Bengal,13.778,84.992,130,935,710,1.55,TRUE,2.85,Andhra Pradesh
+35,Bhairavi-902,03-06-1999,07-06-1999,Arabian Sea,18.332,70.11,90,970,390,0.85,FALSE,0,Gujarat
+36,Chetan-78,11-10-2004,15-10-2004,Bay of Bengal,15.443,87.551,145,928,780,1.6,TRUE,3.1,Odisha;West Bengal
+37,Danish-301,01-09-1997,04-09-1997,Bay of Bengal,12.442,82.774,110,955,550,1.2,TRUE,2.1,Tamil Nadu
+38,Esha-15,21-05-1989,24-05-1989,Arabian Sea,17.991,69.99,75,980,340,0.7,FALSE,0,Maharashtra
+39,Fani-67,13-11-2002,17-11-2002,Bay of Bengal,16.552,88.332,155,920,820,1.8,TRUE,4.2,West Bengal;Odisha
+40,Gaja-301,03-10-2009,06-10-2009,Bay of Bengal,11.882,85.442,88,972,410,0.92,FALSE,0,Tamil Nadu
+41,Hikaa-19,14-08-1990,19-08-1990,Arabian Sea,19.441,71.552,125,938,680,1.45,TRUE,2.6,Gujarat
+42,Jal-900,01-12-2011,04-12-2011,Bay of Bengal,14.773,83.991,95,965,450,1,FALSE,0,Andhra Pradesh
+43,Khanun-81,08-06-1987,12-06-1987,Bay of Bengal,17.442,89.113,170,910,880,1.9,TRUE,4.6,West Bengal
+44,Lehar-44,15-11-2013,19-11-2013,Bay of Bengal,13.994,86.442,118,948,600,1.35,TRUE,2.2,Andhra Pradesh
+45,Mekunu-62,22-05-2006,27-05-2006,Arabian Sea,20.332,70.552,165,918,830,1.75,TRUE,3.95,Gujarat;Goa
+46,Nisarga-10,01-06-2020,03-06-2020,Arabian Sea,18.552,72.221,120,950,520,1.1,TRUE,1.9,Maharashtra
+47,Tauktae-7,13-05-2021,18-05-2021,Arabian Sea,21.001,71.441,185,905,900,2.1,TRUE,5.5,Gujarat;Goa;Karnataka
+48,Yaas-88,22-05-2021,26-05-2021,Bay of Bengal,16.221,88.201,150,928,770,1.6,TRUE,3.6,Odisha;West Bengal
+49,Gulab-31,23-09-2021,27-09-2021,Bay of Bengal,17.002,85.221,90,970,420,0.98,FALSE,0,Andhra Pradesh
+50,Amphan-19,15-05-2020,21-05-2020,Bay of Bengal,16.88,88.102,240,905,950,1.95,TRUE,5.2,West Bengal;Odisha
+51,Bulbul-7,05-11-2019,09-11-2019,Bay of Bengal,18.33,89.021,135,940,600,1.45,TRUE,2.4,West Bengal
+52,Hudhud-2,07-10-2014,12-10-2014,Bay of Bengal,14.88,84.55,175,910,850,1.7,TRUE,4.1,Andhra Pradesh;Odisha
+53,Varsha-3,02-09-1998,07-09-1998,Arabian Sea,16.55,69.982,80,975,380,0.75,FALSE,0,Gujarat
+54,Biparjoy-22,09-06-2023,15-06-2023,Arabian Sea,19.442,70.88,168,912,860,2,TRUE,4.4,Gujarat;Maharashtra
+55,Sitrang-5,20-10-2022,24-10-2022,Bay of Bengal,18.99,89.112,110,952,520,1.2,TRUE,2,West Bengal;Assam
+56,Mocha-4,07-05-2023,14-05-2023,Bay of Bengal,15.11,91.2,195,905,920,1.8,TRUE,5.3,Andaman and Nicobar;West Bengal
+57,Mora-1,25-05-2017,30-05-2017,Bay of Bengal,16.7,88.55,125,940,610,1.35,TRUE,2.6,Odisha;West Bengal
+58,Laila-12,16-05-2010,21-05-2010,Bay of Bengal,14.22,85.77,105,960,480,1.05,FALSE,0,Andhra Pradesh
+59,Nilam-44,27-10-2012,01-11-2012,Bay of Bengal,12.99,84.22,95,968,420,0.95,FALSE,0,Tamil Nadu;Puducherry
+60,Ockhi-99,28-11-2017,04-12-2017,Arabian Sea,10.44,72,160,915,870,1.6,TRUE,3.8,Kerala;Tamil Nadu
+61,Vardah-11,11-12-2016,15-12-2016,Bay of Bengal,13.33,83.11,140,930,720,1.5,TRUE,2.9,Tamil Nadu;Andhra Pradesh
+62,Nargis-7,26-04-2008,03-05-2008,Bay of Bengal,14.2,89.9,200,900,940,2.1,TRUE,5.6,Andaman and Nicobar
+63,Bhola-14,17-10-1988,22-10-1988,Bay of Bengal,16.77,90.33,180,910,860,1.85,TRUE,4.3,West Bengal
+64,Gonu-6,31-05-2007,06-06-2007,Arabian Sea,18.11,69.77,150,925,760,1.7,TRUE,3.4,Gujarat;Maharashtra
+65,Faro-8,03-08-1995,09-08-1995,Bay of Bengal,15.44,86.55,120,945,620,1.3,TRUE,2.25,Odisha
+66,Imelda-3,11-09-2001,15-09-2001,Bay of Bengal,17.88,88.44,100,960,500,1,FALSE,0,West Bengal
+67,Asha-99,17-07-1993,20-07-1993,Bay of Bengal,13.77,84.99,130,935,710,1.55,TRUE,2.8,Andhra Pradesh
+68,Bhairavi-3,02-06-1999,06-06-1999,Arabian Sea,18.33,70.11,90,970,390,0.85,FALSE,0,Gujarat
+69,Chetan-12,10-10-2004,15-10-2004,Bay of Bengal,15.44,87.55,145,928,780,1.6,TRUE,3,Odisha;West Bengal
+70,Danish-17,31-08-1997,04-09-1997,Bay of Bengal,12.44,82.77,110,955,550,1.2,TRUE,2.05,Tamil Nadu
+71,Esha-2,20-05-1989,23-05-1989,Arabian Sea,17.99,69.99,75,980,340,0.7,FALSE,0,Maharashtra
+72,Fani-4,12-11-2002,16-11-2002,Bay of Bengal,16.55,88.33,155,920,820,1.8,TRUE,4,West Bengal;Odisha
+73,Gaja-21,02-10-2009,06-10-2009,Bay of Bengal,11.88,85.44,88,972,410,0.92,FALSE,0,Tamil Nadu
+74,Hikaa-8,13-08-1990,18-08-1990,Arabian Sea,19.44,71.55,125,938,680,1.45,TRUE,2.55,Gujarat
+75,Jal-77,30-11-2011,04-12-2011,Bay of Bengal,14.77,83.99,95,965,450,1,FALSE,0,Andhra Pradesh
+76,Khanun-9,07-06-1987,11-06-1987,Bay of Bengal,17.44,89.11,170,910,880,1.9,TRUE,4.5,West Bengal
+77,Lehar-6,14-11-2013,18-11-2013,Bay of Bengal,13.99,86.44,118,948,600,1.35,TRUE,2.15,Andhra Pradesh
+78,Mekunu-2,21-05-2006,26-05-2006,Arabian Sea,20.33,70.55,165,918,830,1.75,TRUE,3.9,Gujarat;Goa
+79,Nisarga-21,31-05-2020,03-06-2020,Arabian Sea,18.55,72.22,120,950,520,1.1,TRUE,1.9,Maharashtra
+80,Tauktae-15,12-05-2021,17-05-2021,Arabian Sea,21,71.44,185,905,900,2.1,TRUE,5.4,Gujarat;Goa;Karnataka
+81,Yaas-5,21-05-2021,25-05-2021,Bay of Bengal,16.22,88.2,150,928,770,1.6,TRUE,3.5,Odisha;West Bengal
+82,Gulab-2,22-09-2021,26-09-2021,Bay of Bengal,17,85.22,90,970,420,0.98,FALSE,0,Andhra Pradesh
+83,Amphan-3,14-05-2020,20-05-2020,Bay of Bengal,16.88,88.1,240,905,950,1.95,TRUE,5.2,West Bengal;Odisha
+84,Bulbul-2,04-11-2019,08-11-2019,Bay of Bengal,18.33,89.02,135,940,600,1.45,TRUE,2.4,West Bengal
+85,Hudhud-9,06-10-2014,11-10-2014,Bay of Bengal,14.88,84.55,175,910,850,1.7,TRUE,4,Andhra Pradesh;Odisha
+86,Varsha-9,01-09-1998,06-09-1998,Arabian Sea,16.55,69.98,80,975,380,0.75,FALSE,0,Gujarat
+87,Biparjoy-31,08-06-2023,14-06-2023,Arabian Sea,19.44,70.88,168,912,860,2,TRUE,4.5,Gujarat;Maharashtra
+88,Sitrang-11,19-10-2022,23-10-2022,Bay of Bengal,18.99,89.11,110,952,520,1.2,TRUE,2,West Bengal;Assam
+89,Mocha-12,06-05-2023,13-05-2023,Bay of Bengal,15.11,91.2,195,905,920,1.8,TRUE,5.2,Andaman and Nicobar;West Bengal
+90,Mora-7,24-05-2017,29-05-2017,Bay of Bengal,16.7,88.55,125,940,610,1.35,TRUE,2.6,Odisha;West Bengal
+91,Laila-6,15-05-2010,20-05-2010,Bay of Bengal,14.22,85.77,105,960,480,1.05,FALSE,0,Andhra Pradesh
+92,Nilam-6,26-10-2012,31-10-2012,Bay of Bengal,12.99,84.22,95,968,420,0.95,FALSE,0,Tamil Nadu;Puducherry
+93,Ockhi-8,27-11-2017,03-12-2017,Arabian Sea,10.44,72,160,915,870,1.6,TRUE,3.8,Kerala;Tamil Nadu
+94,Vardah-7,10-12-2016,14-12-2016,Bay of Bengal,13.33,83.11,140,930,720,1.5,TRUE,2.9,Tamil Nadu;Andhra Pradesh
+95,Nargis-11,25-04-2008,02-05-2008,Bay of Bengal,14.2,89.9,200,900,940,2.1,TRUE,5.6,Andaman and Nicobar
+96,Bhola-5,16-10-1988,21-10-1988,Bay of Bengal,16.77,90.33,180,910,860,1.85,TRUE,4.3,West Bengal
+97,Gonu-12,30-05-2007,05-06-2007,Arabian Sea,18.11,69.77,150,925,760,1.7,TRUE,3.4,Gujarat;Maharashtra
+98,Faro-6,02-08-1995,08-08-1995,Bay of Bengal,15.44,86.55,120,945,620,1.3,TRUE,2.25,Odisha
+99,Imelda-8,10-09-2001,14-09-2001,Bay of Bengal,17.88,88.44,100,960,500,1,FALSE,0,West Bengal
+100,Asha-14,16-07-1993,19-07-1993,Bay of Bengal,13.77,84.99,130,935,710,1.55,TRUE,2.8,Andhra Pradesh
