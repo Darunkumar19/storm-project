@@ -7,11 +7,8 @@ WORKDIR /app
 # Copy all your project files into the container
 COPY . /app
 
-# Setup the exact compiler version required by your project
-RUN stack setup
-
-# Build using only 1 core and no optimizations to save memory
-RUN stack build --fast --jobs=1
+# Build with 1 core, and FORCE it to install the exact compiler version needed
+RUN stack build --install-ghc --fast --jobs=1
 
 # Expose the port
 EXPOSE 3000
