@@ -12,6 +12,7 @@ import Data.Aeson (ToJSON, (.=), object)
 import Data.Csv (FromNamedRecord(..), FromField(..), decodeByName, (.:))
 import Control.Monad.IO.Class (liftIO)
 import Data.List (sortOn)
+import System.Environment (lookupEnv)
 import Network.Wai.Middleware.Cors
 
 --------------------------------------------------
@@ -116,11 +117,14 @@ loadHistorical = do
 
 main :: IO ()
 main = do
+  portStr <- lookupEnv "PORT"
+  let port = maybe 3000 read portStr
 
   historical <- loadHistorical
   putStrLn ("Loaded storms: " ++ show (length historical))
+  putStrLn ("Starting server on port: " ++ show port)
 
-  scotty 3000 $ do
+  scotty port $ do
 
     middleware $ cors (const $ Just simpleCorsResourcePolicy)
 

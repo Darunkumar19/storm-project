@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Storm Twin Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-[#020617] text-slate-100 p-6 md:p-12">
+
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-10 text-center">
+            <h1 class="text-3xl font-black tracking-tight text-blue-500 uppercase">Storm Surge Analysis</h1>
+            <p class="text-slate-500 text-sm mt-2 font-medium">Historical Storm Pattern Matching Engine</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 bg-[#0f172a] p-6 rounded-2xl border border-slate-800 mb-8 shadow-2xl">
+            <div class="flex flex-col gap-2">
+                <label class="text-[10px] font-bold text-slate-500 uppercase px-1">Max Wind (km/h)</label>
+                <input type="number" id="w" value="100" class="bg-slate-950 border border-slate-700 p-3 rounded-xl outline-none focus:border-blue-500 transition font-mono">
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="text-[10px] font-bold text-slate-500 uppercase px-1">Pressure (mb)</label>
+                <input type="number" id="p" value="800" class="bg-slate-950 border border-slate-700 p-3 rounded-xl outline-none focus:border-blue-500 transition font-mono">
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="text-[10px] font-bold text-slate-500 uppercase px-1">Storm Tide (m)</label>
+                <input type="number" id="t" value="1" step="0.1" class="bg-slate-950 border border-slate-700 p-3 rounded-xl outline-none focus:border-blue-500 transition font-mono">
+            </div>
+            <div class="flex items-end">
+                <button onclick="analyze()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-3 rounded-xl transition shadow-lg shadow-blue-900/20 uppercase text-xs tracking-widest">
+                    Find Best Match
+                </button>
+            </div>
+        </div>
+
+        <div id="results-area" class="hidden space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-900/50 border border-slate-800 p-10 rounded-3xl text-center shadow-inner">
+                    <span class="text-slate-500 text-[10px] font-black uppercase tracking-[0.2em]">Surge Occurrence Probability</span>
+                    <div id="prob-display" class="text-7xl font-black text-blue-500 mt-4 tabular-nums">0%</div>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 p-10 rounded-3xl flex flex-col justify-center">
+                    <h3 class="text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-6">Historical Profile</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                            <span class="text-slate-400 text-sm font-medium">Twin Event</span>
+                            <span id="twin-name" class="font-black text-white text-lg"></span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400 text-sm font-medium">Historical Surge</span>
+                            <span id="surge-stat" class="font-black text-blue-400"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl h-[350px] shadow-2xl">
+                <canvas id="comparisonChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ── API Base URL ──────────────────────────────────
+        // Automatically uses localhost for dev, Render URL for production.
+        // IMPORTANT: Replace the Render URL below with YOUR actual Render service URL.
+        const API_BASE = window.location.hostname === "localhost"
+            ? "http://localhost:3000"
+            : "https://storm-surge-api.onrender.com";
+
+        let myChart;
+
+        async function analyze() {
+            const wind = document.getElementById('w').value;
+            const press = document.getElementById('p').value;
+            const tide = document.getElementById('t').value;
+
+            try {
+                const res = await fetch(`${API_BASE}/analyze?wind=${wind}&press=${press}&tide=${tide}`);
+                const data = await res.json();
+                const twin = data.best_match;
+
+                document.getElementById('results-area').classList.remove('hidden');
+                
+                // Show percentage ONLY in the left box
+                document.getElementById('prob-display').innerText = data.surge_probability.toFixed(1) + "%";
+                
+                // Update Context Info
+                document.getElementById('twin-name').innerText = twin.name;
+                document.getElementById('surge-stat').innerText = twin.surge_occurred ? "YES" : "NO";
+
+                plotGraph(data.input_values, twin);
+            } catch (e) { 
+                console.error(e);
+                alert("Backend Connection Error"); 
+            }
+        }
+
+        function plotGraph(input, twin) {
+            const ctx = document.getElementById('comparisonChart').getContext('2d');
+            if (myChart) myChart.destroy();
+
+            // Scaling pressure and tide for visual comparison against wind speed
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Wind Speed (km/h)', 'Pressure (mb/10)', 'Tide Level (m*10)'],
+                    datasets: [
+                        { label: 'Current Input', data: [input.w, input.p/10, input.t*10], backgroundColor: '#3b82f6', borderRadius: 10 },
+                        { label: 'Historical Twin', data: [twin.max_wind_kmh, twin.min_pressure_mb/10, twin.tide_level_m*10], backgroundColor: '#1e293b', borderRadius: 10, borderColor: '#334155', borderWidth: 1 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { 
+                            position: 'top',
+                            labels: { color: '#94a3b8', font: { weight: '900', size: 10 }, usePointStyle: true, padding: 20 } 
+                        } 
+                    },
+                    scales: { 
+                        y: { display: false, grid: { display: false } },
+                        x: { 
+                            ticks: { color: '#64748b', font: { weight: 'bold', size: 11 } }, 
+                            grid: { display: false } 
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

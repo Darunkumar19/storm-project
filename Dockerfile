@@ -1,17 +1,26 @@
-# Pull the exact Haskell 9.10 image to skip the heavy compiler download
-FROM haskell:9.10
+# ── Stage 1: Build ──────────────────────────────────
+FROM haskell:9.10 AS builder
 
-# Set the working directory
 WORKDIR /app
-
-# Copy all your project files
 COPY . /app
 
-# Build the project safely using the pre-installed system compiler
+# Build the project (--fast skips optimizations for faster compile)
 RUN stack build --system-ghc --fast --jobs=1
 
-# Expose the port
+# Copy the built binary to a known location
+RUN cp "$(stack path --local-install-root --system-ghc)/bin/StormProject-exe" /app/server
+
+# ── Stage 2: Runtime (tiny image) ───────────────────
+FROM debian:bookworm-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      libgmp10 ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY --from=builder /app/server /app/server
+COPY --from=builder /app/historical_storms.csv /app/historical_storms.csv
+
 EXPOSE 3000
 
-# Run the server
-CMD ["stack", "run", "--system-ghc"]
+CMD ["/app/server"]
