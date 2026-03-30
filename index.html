@@ -63,6 +63,11 @@
     </div>
 
     <script>
+        // ── API Base URL ──────────────────────────────────
+        const API_BASE = window.location.hostname === "localhost"
+            ? "http://localhost:3000"
+            : "https://storm-project-1.onrender.com";
+
         let myChart;
 
         async function analyze() {
@@ -71,7 +76,7 @@
             const tide = document.getElementById('t').value;
 
             try {
-                const res = await fetch(`http://localhost:3000/analyze?wind=${wind}&press=${press}&tide=${tide}`);
+                const res = await fetch(`${API_BASE}/analyze?wind=${wind}&press=${press}&tide=${tide}`);
                 const data = await res.json();
                 const twin = data.best_match;
 
