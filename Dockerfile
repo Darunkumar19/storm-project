@@ -1,17 +1,17 @@
-# Use the official Haskell image
-FROM haskell:latest
+# Pull the exact Haskell 9.10 image to skip the heavy compiler download
+FROM haskell:9.10
 
 # Set the working directory
 WORKDIR /app
 
-# Copy all your project files into the container
+# Copy all your project files
 COPY . /app
 
-# Build with 1 core, and FORCE it to install the exact compiler version needed
-RUN stack build --install-ghc --fast --jobs=1
+# Build the project safely using the pre-installed system compiler
+RUN stack build --system-ghc --fast --jobs=1
 
 # Expose the port
 EXPOSE 3000
 
 # Run the server
-CMD ["stack", "run"]
+CMD ["stack", "run", "--system-ghc"]
